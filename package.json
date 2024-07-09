@@ -11,8 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder.js",
     "data:destroy": "node backend/seeder.js -d",
-    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
-
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "Garrett Swink",
   "license": "MIT",
@@ -33,7 +32,7 @@
     "nodemon": "^3.1.4"
   },
   "engines": {
-    "node": ">=14.0.0",
-    "npm": ">=6.0.0"
+    "node": "14.x",
+    "npm": "6.x"
   }
 }
