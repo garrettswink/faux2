@@ -50,6 +50,8 @@ app.use('/images', express.static(path.join(__dirname, '..', 'frontend', 'public
 // Original of the above. I think the above is better. Might need to swap out.
 // app.use('/public/uploads/', express.static(path.join(__dirname, '/public/uploads/')));
 
+//Updated with 'dist' 
+
 app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
 
 app.get('*', (req, res) => {
