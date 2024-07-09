@@ -20,7 +20,7 @@ connectDB(); // Connect to MongoDB
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
     credentials: true,
 }));
 
@@ -50,6 +50,11 @@ app.use('/images', express.static(path.join(__dirname, '..', 'frontend', 'public
 // Original of the above. I think the above is better. Might need to swap out.
 // app.use('/public/uploads/', express.static(path.join(__dirname, '/public/uploads/')));
 
+app.use(express.static(path.join(__dirname, '..', 'frontend', 'build')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'frontend', 'build', 'index.html'));
+});
 
 app.use(notFound);
 app.use(errorHandler);
