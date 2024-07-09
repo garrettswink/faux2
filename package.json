@@ -12,6 +12,7 @@
     "data:import": "node backend/seeder.js",
     "data:destroy": "node backend/seeder.js -d",
     "build": "npm install --prefix frontend && npm run build --prefix frontend"
+
   },
   "author": "Garrett Swink",
   "license": "MIT",
